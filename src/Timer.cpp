@@ -18,14 +18,32 @@ void Timer::print()
     printf("%lu ns\n", elapsedTimeNs);
 }
 
-unsigned long Timer::getElapsedMs()
+std::chrono::duration<int64_t, std::nano> Timer::getElapsedTime()
 {
     auto now = std::chrono::steady_clock::now();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(now - startTime).count();
+    return now - startTime;
+}
+
+unsigned long Timer::getElapsedMs()
+{
+    auto elapsedTime = getElapsedTime();
+    return std::chrono::duration_cast<std::chrono::milliseconds>(elapsedTime).count();
 }
 
 unsigned long Timer::getElapsedNs()
 {
-    auto now = std::chrono::steady_clock::now();
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(now - startTime).count();
+    auto elapsedTime = getElapsedTime();
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(elapsedTime).count();
+}
+
+unsigned long Timer::getElapsedS()
+{
+    auto elapsedTime = getElapsedTime();
+    return std::chrono::duration_cast<std::chrono::seconds>(elapsedTime).count();
+}
+
+unsigned long Timer::getElapsedMin()
+{
+    auto elapsedTime = getElapsedTime();
+    return std::chrono::duration_cast<std::chrono::minutes>(elapsedTime).count();
 }

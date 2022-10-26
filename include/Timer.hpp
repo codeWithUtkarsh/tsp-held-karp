@@ -27,9 +27,15 @@ public:
     /**
      * @brief Returns the elapsed time between calling start() and this method
      */
+    unsigned long getElapsedMin();
+
+    unsigned long getElapsedS();
+
     unsigned long getElapsedMs();
 
     unsigned long getElapsedNs();
+
+    std::chrono::duration<int64_t, std::nano> getElapsedTime();
 };
 
 #endif
