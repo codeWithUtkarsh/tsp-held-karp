@@ -74,13 +74,6 @@ std::vector<int> DynamicProgramming::getPathVector(int **predecessors, int initi
         mask = mask ^ vertexMask;
     }
 
-    printf("%i", startingVertex);
-    for (int i = 0; i < graphSize; ++i)
-    {
-        printf(" -> %i", path[i]);
-    }
-    printf("\n");
-
     return path;
 }
 
