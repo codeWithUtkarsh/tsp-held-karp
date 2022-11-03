@@ -44,7 +44,7 @@ void Tests::randomInstanceTest(int minSize, int maxSize, int iterCount, std::str
             graph = graphGenerator::getRandom(vertexCount, 10);
 
             timer.start();
-            // bruteForceSearch(graph, startingVertex);
+            DynamicProgramming::execute(graph);
             averageTime += timer.getElapsedNs();
 
             delete graph;
