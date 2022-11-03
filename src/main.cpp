@@ -79,6 +79,7 @@ void fileInstanceTest()
 
         printf("Finished.\n");
         printf("Results saved to file.\n");
+        delete graph;
     }
 }
 
