@@ -1,5 +1,5 @@
 CXX       := g++
-CXX_FLAGS := -O3
+CXX_FLAGS := -O3 -ffast-math -std=c++11
 
 BIN     := bin
 SRC     := src

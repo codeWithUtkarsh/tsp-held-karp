@@ -5,8 +5,8 @@
 class Timer
 {
 private:
-    std::chrono::_V2::steady_clock::time_point startTime;
-    std::chrono::_V2::steady_clock::time_point stopTime;
+    std::chrono::steady_clock::time_point startTime;
+    std::chrono::steady_clock::time_point stopTime;
     unsigned long elapsedTimeNs;
 
 public:
